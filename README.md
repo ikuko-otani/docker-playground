@@ -14,13 +14,13 @@ Target roles (Senior Backend Engineer at EU scale-ups: Mollie, HelloFresh, Revol
 
 ## 🗂 Planned units
 
-### Docker fundamentals (Week 1 late)
-- [ ] 01 Docker Desktop setup + `docker run / ps / stop / logs`
-- [ ] 02 First Dockerfile: `FROM python:3.12-slim` hello-world FastAPI
-- [ ] 03 Multi-stage builds and image size optimization
-- [ ] 04 Volumes and bind mounts
+### Docker fundamentals (Week 1 early)
+- [x] 01 Install & First Run — Docker Desktop setup + `docker run / ps / stop / logs`
+- [x] 02 First Dockerfile — `FROM python:3.12-slim` FastAPI hello-world
+- [x] 03 Build, Tag, and Run Images — `docker build / tag / run` options
+- [x] 04 Docker Commands Cheat Sheet — `ps / logs -f / exec / stop / rm / image prune`
 
-### Docker Compose (Week 2 early)
+### Docker Compose (Week 1 late)
 - [ ] 05 First `compose.yml`: single service
 - [ ] 06 Two-service setup: FastAPI + PostgreSQL
 - [ ] 07 `.env`, `env_file`, `depends_on`, healthchecks
