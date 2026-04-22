@@ -1,0 +1,4 @@
+# DC-02: FastAPI + PostgreSQL compose.yaml from scratch
+# compose.yaml skeleton – fill in each TODO following the lesson guide.
+# TODO: Define 'api' service (build from Dockerfile, ports, environment, depends_on)
+# TODO: Define 'postgres' service (image, environment, volumes)
