@@ -1,0 +1,25 @@
+# DC-01: Compose Quickstart -- .dockerignore
+# 日本語訳：ビルドコンテキストから除外するファイル・ディレクトリ
+
+# Secrets -- never bake .env into an image layer
+# シークレット：.env をイメージレイヤーに焦き込まないこと
+.env
+
+# Python cache
+# Python キャッシュ
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+# 仮想環境
+venv/
+.venv/
+
+# Editor metadata
+# エディターメタデータ
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
