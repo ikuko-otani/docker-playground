@@ -13,3 +13,11 @@ curl http://localhost:8000
 # Check running containers
 # 起動中のコンテナ一覧を確認
 docker compose ps
+
+# Start in detached mode
+# バックグラウンドで起動
+docker compose up -d
+
+# Watch logs
+# ログをリアルタイム確認（Ctrl+C で抜ける）
+docker compose logs -f

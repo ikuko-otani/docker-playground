@@ -9,10 +9,18 @@ services:
     build: .
     ports:
       - "8000:5000"
-
+    depends_on:
+      redis:
+        condition: service_healthy
   redis:
     # TODO: add image, volumes
     image: redis:alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
 # TODO: add named volumes block
 # volumes:
