@@ -3,7 +3,6 @@
 # Ref: https://docs.docker.com/compose/gettingstarted/
 # TODO: Fill this file following the lesson guide.
 
-# Dockerfile
 # ベースイメージを指定（alpine = 軽量 Linux）
 FROM python:3.12-alpine
 

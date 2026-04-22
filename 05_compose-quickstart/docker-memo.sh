@@ -21,3 +21,12 @@ docker compose up -d
 # Watch logs
 # ログをリアルタイム確認（Ctrl+C で抜ける）
 docker compose logs -f
+
+# 停止→再起動後もカウントが引き継がれることを確認
+docker compose down
+docker compose up -d
+curl http://localhost:8000
+
+# Inspect the named volume
+# Named Volume の一覧を確認
+docker volume ls
