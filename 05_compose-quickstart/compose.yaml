@@ -1,0 +1,17 @@
+# DC-01: Compose Quickstart — compose.yaml scaffold
+# 日本語訳：DC-01: Compose クイックスタート — compose.yaml 雛形
+# Ref: https://docs.docker.com/compose/gettingstarted/
+# TODO: Fill each section following the lesson guide.
+
+services:
+  web:
+    # TODO: add build, ports, environment, depends_on
+    build: .
+
+  redis:
+    # TODO: add image, volumes
+    image: redis:alpine
+
+# TODO: add named volumes block
+# volumes:
+#   redis-data:
