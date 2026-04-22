@@ -1,0 +1,4 @@
+# DC-01: Compose Quickstart -- Python dependencies
+# 日本語訳：DC-01: Compose クイックスタート — Python 依存ライブラリ
+flask
+redis
