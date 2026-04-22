@@ -11,15 +11,22 @@ app = Flask(__name__)
 
 # TODO: Connect to Redis using the service name as hostname
 # cache = redis.Redis(host='redis', port=6379)
-
+cache = redis.Redis(host="redis", port=6379)
 
 def get_hit_count():
     # TODO: Implement retry logic with retries=5, delay=0.5s
-    pass
+    retries = 5
+    while True:
+        try:
+            return cache.incr("hits")
+        except redis.exceptions.ConnectionError as exc:
+            if retries == 0:
+                raise exc
+            retries -= 1
+            time.sleep(0.5)
 
-
-@app.route('/')
+@app.route("/")
 def hello():
     # TODO: Return a greeting string with the hit count
     count = get_hit_count()
-    return f'Hello World! I have been seen {count} times.\n'
+    return f"Hello World! I have been seen {count} times.\n"
