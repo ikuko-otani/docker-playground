@@ -10,7 +10,6 @@ from flask import Flask
 app = Flask(__name__)
 
 # TODO: Connect to Redis using the service name as hostname
-# cache = redis.Redis(host='redis', port=6379)
 cache = redis.Redis(host="redis", port=6379)
 
 def get_hit_count():

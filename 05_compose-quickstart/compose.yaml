@@ -7,6 +7,8 @@ services:
   web:
     # TODO: add build, ports, environment, depends_on
     build: .
+    ports:
+      - "8000:5000"
 
   redis:
     # TODO: add image, volumes
