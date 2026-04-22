@@ -30,3 +30,7 @@ curl http://localhost:8000
 # Inspect the named volume
 # Named Volume の一覧を確認
 docker volume ls
+
+# Confirm variable interpolation
+docker compose config
+docker compose config | Select-String -Pattern "ports" -Context 0,4
