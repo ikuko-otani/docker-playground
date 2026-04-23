@@ -1,0 +1,17 @@
+# DC-03: .env, env_file, healthcheck, networks
+# Ref: https://docs.docker.com/compose/environment-variables/
+# TODO: Complete this file following the lesson guide.
+# 手順書に従ってこのファイルを完成させてください。
+
+services:
+ app:
+ build: .
+ # TODO: add env_file, ports, depends_on, networks
+
+ db:
+ image: postgres:16-alpine
+ # TODO: add environment, healthcheck, volumes, networks
+
+# TODO: define custom networks below
+# カスタムネットワークをここに定義する
+networks: {}

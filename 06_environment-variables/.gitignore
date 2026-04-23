@@ -1,0 +1,5 @@
+# Ignore real .env — never commit secrets! / 本番用 .env は絶対にコミットしない！
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
