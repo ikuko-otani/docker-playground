@@ -1,17 +1,36 @@
 # DC-03: .env, env_file, healthcheck, networks
 # Ref: https://docs.docker.com/compose/environment-variables/
-# TODO: Complete this file following the lesson guide.
-# 手順書に従ってこのファイルを完成させてください。
 
 services:
- app:
- build: .
- # TODO: add env_file, ports, depends_on, networks
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - backend
 
- db:
- image: postgres:16-alpine
- # TODO: add environment, healthcheck, volumes, networks
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    networks:
+      - backend
 
-# TODO: define custom networks below
-# カスタムネットワークをここに定義する
-networks: {}
+networks:
+  backend:
+    driver: bridge
