@@ -29,5 +29,5 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 # Named volume for data persistence
-valumes:
+volumes:
   postgres_data:
