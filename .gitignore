@@ -208,4 +208,6 @@ __marimo__/
 
 # Ignore environment variable files
 .env
+.env.local
+.env.*.local
 *.env
