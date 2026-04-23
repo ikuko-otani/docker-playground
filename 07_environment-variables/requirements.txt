@@ -1,0 +1,7 @@
+# Create requirements file / 依存ファイルを作成する
+
+cat > requirements. txt << 'EOF'
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+psycopg2-binary==2.9.9
+EOF
