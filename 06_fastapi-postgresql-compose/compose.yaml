@@ -2,3 +2,32 @@
 # compose.yaml skeleton – fill in each TODO following the lesson guide.
 # TODO: Define 'api' service (build from Dockerfile, ports, environment, depends_on)
 # TODO: Define 'postgres' service (image, environment, volumes)
+
+services:
+  # API service (built from local Dockerfile)
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_NAME: ${POSTGRES_DB}
+      DB_PORT: ${DB_PORT}
+    depends_on:
+      - postgres
+
+  # PostgreSQL service (official image)
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+# Named volume for data persistence
+valumes:
+  postgres_data:
