@@ -23,5 +23,7 @@ def health():
             dbname=db_name,
             connect_timeout=3
         )
+        conn.close()
+        return {"status": "ok", "db": "connected"}
     except Exception as e:
         return {"status": "error", "detail": str(e)}
