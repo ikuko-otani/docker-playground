@@ -1,4 +1,4 @@
-# Create requirements file / 依存ファイルを作成する
+# requirements file / 依存ファイル
 
 cat > requirements. txt << 'EOF'
 fastapi==0.111.0

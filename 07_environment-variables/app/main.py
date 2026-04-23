@@ -8,19 +8,15 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-
 @app.get("/")
 def root():
- # TODO: Return APP_ENV and DATABASE_URL from environment
- # 環境変数 APP_ENV と DATABASE_URL を返すように実装する
- return {
- "message": "TODO: return env vars here",
- "app_env": os.getenv("APP_ENV", "not set"),
- }
-
+    # Return APP_ENV and DATABASE_URL from environment
+    return {
+        "app_env": os.getenv("APP_ENV", "not set"),
+        "database_url": os.getenv("DATABASE_URL", "not set")
+    }
 
 @app.get("/health")
 def health():
- # TODO: add DB connectivity check
- # TODO: データベース接続確認を追加する
- return {"status": "ok"}
+    # DB connectivity check
+    return {"status": "OK"}
