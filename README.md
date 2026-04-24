@@ -21,10 +21,10 @@ Target roles (Senior Backend Engineer at EU scale-ups: Mollie, HelloFresh, Revol
 - [x] 04 Docker Commands Cheat Sheet — `ps / logs -f / exec / stop / rm / image prune`
 
 ### Docker Compose (Week 1 late)
-- [ ] 05 First `compose.yml`: single service
-- [ ] 06 Two-service setup: FastAPI + PostgreSQL
-- [ ] 07 `.env`, `env_file`, `depends_on`, healthchecks
-- [ ] 08 Networks and service discovery
+- [x] 05 First `compose.yml`: single service
+- [x] 06 Two-service setup: FastAPI + PostgreSQL
+- [x] 07 `.env`, `env_file`, `depends_on`, healthchecks
+- [x] 08 Networks and service discovery
 
 ## 🔗 Related repositories
 
